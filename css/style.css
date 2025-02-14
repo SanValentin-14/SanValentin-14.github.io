@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    text-align: center;
+    overflow-x: hidden;
+    transition: background 1s ease;
+}
+
+.header {
+    position: relative;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #7ebcf7, #b2dffc);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #fff;
+}
+
+.header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #fff;
+    text-shadow: 3px 3px 6px #333;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.header p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.hearts::before, .hearts::after {
+    content: "💙";
+    position: absolute;
+    font-size: 2.5em;
+    animation: floatHearts 6s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.hearts::before {
+    top: 10%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.hearts::after {
+    top: 25%;
+    right: 25%;
+    animation-delay: 4s;
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-120px) rotate(20deg); }
+    100% { transform: translateY(0) rotate(-20deg); }
+}
+
+.gallery {
+    margin: 50px 0;
+}
+
+.gallery h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px #555;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.photos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s, box-shadow 0.5s;
+    cursor: pointer;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.6);
+}
+
+.photo:hover img {
+    filter: brightness(1.1);
+}
+
+.letter {
+    margin: 60px 20px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.letter h2 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px #333;
+}
+
+.card {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #ffffff70;
+    border-radius: 15px;
+    color: #222;
+    padding: 30px;
+    font-size: 1.5em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.4s, background 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #fff;
+    color: #000;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #7ebcf7;
+    color: #fff;
+    font-size: 1.2em;
+    border-top: 2px solid #fff;
+    text-shadow: 1px 1px 2px #333;
+}
+
+.floating-heart {
+    position: absolute;
+    color: #ff69b4;
+    font-size: 2em;
+    animation: floatUp 3s linear;
+    pointer-events: none;
+    filter: drop-shadow(0 0 5px #ff1493);
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
